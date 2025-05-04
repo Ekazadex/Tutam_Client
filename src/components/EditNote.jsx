@@ -19,7 +19,7 @@ const EditNote = () => {
 
       try {
         console.log('Fetching note with ID:', id); // Debugging
-        const response = await axios.get(`http://localhost:5000/api/notes/${id}`);
+        const response = await axios.get(`https://eka-tutam-server.up.railway.app/api/notes/${id}`);
         console.log('Fetched note data:', response.data); // Debugging
         
         if (response.data) {
@@ -49,7 +49,7 @@ const EditNote = () => {
 
     try {
       console.log('Updating note:', { id, title, content }); // Debugging
-      const response = await axios.put(`http://localhost:5000/api/notes/${id}`, {
+      const response = await axios.put(`https://eka-tutam-server.up.railway.app/api/notes/${id}`, {
         title,
         content
       });

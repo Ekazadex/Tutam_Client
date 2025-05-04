@@ -10,7 +10,7 @@ const CreateNote = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/notes', { title, content });
+      await axios.post('https://eka-tutam-server.up.railway.app/api/notes', { title, content });
       navigate('/');
     } catch (error) {
       console.error('Error creating note:', error);

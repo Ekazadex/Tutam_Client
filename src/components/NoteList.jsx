@@ -11,7 +11,7 @@ const NoteList = () => {
 
   const fetchNotes = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/notes');
+      const response = await axios.get('https://eka-tutam-server.up.railway.app/api/notes');
       console.log('Fetched notes:', response.data); // Debugging
       setNotes(response.data);
     } catch (error) {
@@ -28,7 +28,7 @@ const NoteList = () => {
     if (window.confirm('Are you sure you want to delete this note?')) {
       try {
         console.log('Deleting note with ID:', id); // Debugging
-        const response = await axios.delete(`http://localhost:5000/api/notes/${id}`);
+        const response = await axios.delete(`https://eka-tutam-server.up.railway.app/api/notes/${id}`);
         if (response.data) {
           setNotes(prevNotes => prevNotes.filter(note => note.id !== id));
           alert('Note deleted successfully!');
